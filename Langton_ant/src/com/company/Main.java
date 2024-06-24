@@ -6,5 +6,8 @@ public class Main {
 	    Grid grid = new Grid(10);
 
         grid.display();
+
+        grid.changeColor(5, 5);
+        grid.display();
     }
 }

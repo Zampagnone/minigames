@@ -10,6 +10,12 @@ public class Grid extends JFrame{
     private JButton [][] grid;
 
     public Grid(int size) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         this.size = size;
 
         this.grid = new JButton[size][size];
@@ -21,6 +27,16 @@ public class Grid extends JFrame{
 
             }
         }
+    }
+    public void changeColor(int x, int y){
+        if(grid[x][y].getBackground() == Color.BLACK){
+            grid[x][y].setBackground(Color.WHITE);
+            grid[x][y].setOpaque(true);
+        }else{
+            grid[x][y].setBackground(Color.BLACK);
+            grid[x][y].setOpaque(true);
+        }
+
     }
     public void display(){
         frame.setPreferredSize(new Dimension(size*30,size*30));
