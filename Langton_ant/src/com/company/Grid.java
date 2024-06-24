@@ -28,6 +28,11 @@ public class Grid extends JFrame{
             }
         }
     }
+    public void refresh(){
+        frame.invalidate();
+        frame.validate();
+        frame.repaint();
+    }
     public void changeColor(int x, int y){
         if(grid[x][y].getBackground() == Color.BLACK){
             grid[x][y].setBackground(Color.WHITE);
