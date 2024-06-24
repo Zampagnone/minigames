@@ -1,2 +1,4 @@
-package com.company;public class Ant {
+package com.company;
+
+public class Ant {
 }
