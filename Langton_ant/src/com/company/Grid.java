@@ -36,9 +36,11 @@ public class Grid extends JFrame{
     public void changeColor(int x, int y){
         if(grid[x][y].getBackground() == Color.BLACK){
             grid[x][y].setBackground(Color.WHITE);
+            grid[x][y].setForeground(Color.BLACK);
             grid[x][y].setOpaque(true);
         }else{
             grid[x][y].setBackground(Color.BLACK);
+            grid[x][y].setForeground(Color.WHITE);
             grid[x][y].setOpaque(true);
         }
 

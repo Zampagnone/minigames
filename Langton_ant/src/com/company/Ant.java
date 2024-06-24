@@ -15,6 +15,7 @@ public class Ant {
         this.y = y;
         this.facing = facing;
         this.grid = grid;
+        grid.display();
     }
 
     public void turn(){
@@ -49,6 +50,8 @@ public class Ant {
                 }
                 break;
         }
+        move();
+        grid.refresh();
     }
     public void move(){
         grid.changeColor(x, y);
