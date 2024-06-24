@@ -43,6 +43,9 @@ public class Grid extends JFrame{
         }
 
     }
+    public Color getColor(int x, int y){
+        return grid[x][y].getBackground();
+    }
     public void display(){
         frame.setPreferredSize(new Dimension(size*40,size*40));
         frame.setLayout(new GridLayout(size, size));

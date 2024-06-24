@@ -1,13 +1,71 @@
 package com.company;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Ant {
     private int x;
     private int y;
     private char facing;
 
-    public Ant(int x, int y, char facing){
+    private Grid grid;
+
+    public Ant(int x, int y, char facing, Grid grid){
         this.x = x;
         this.y = y;
         this.facing = facing;
+        this.grid = grid;
     }
+
+    public void turn(){
+        switch(facing){
+            case 'n':
+                if(grid.getColor(x, y) == Color.BLACK){
+                    facing = 'e';
+                }else{
+                    facing = 'w';
+                }
+                grid.changeColor(x, y);
+                break;
+            case 's':
+                if(grid.getColor(x, y) == Color.BLACK){
+                    facing = 'w';
+                }else{
+                    facing = 'e';
+                }
+                break;
+            case 'e':
+                if(grid.getColor(x, y) == Color.BLACK){
+                    facing = 's';
+                }else{
+                    facing = 'n';
+                }
+                break;
+            case 'w':
+                if(grid.getColor(x, y) == Color.BLACK){
+                    facing = 'n';
+                }else{
+                    facing = 's';
+                }
+                break;
+        }
+    }
+    public void move(){
+        grid.changeColor(x, y);
+        switch(facing){
+            case 'n':
+                x--;
+                break;
+            case 's':
+                x++;
+                break;
+            case 'e':
+                y++;
+                break;
+            case 'w':
+                y--;
+                break;
+        }
+    }
+
 }
