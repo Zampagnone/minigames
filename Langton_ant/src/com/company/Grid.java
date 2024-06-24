@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Grid extends JFrame{
-    private int size = 10;
+    private int size;
     JFrame frame = new JFrame();
 
     private JButton [][] grid;
@@ -12,27 +12,25 @@ public class Grid extends JFrame{
     public Grid(int size) {
         this.size = size;
 
-
-
         this.grid = new JButton[size][size];
 
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
+
                 grid[i][j] = new JButton(" ");
+
             }
         }
     }
     public void display(){
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(size, size));
+        frame.setPreferredSize(new Dimension(size*30,size*30));
+        frame.setLayout(new GridLayout(size, size));
 
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
-                panel.add(grid[i][j]);
+                frame.add(grid[i][j]);
             }
         }
-
-        frame.add(panel, BorderLayout.CENTER);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Langton's ant");
