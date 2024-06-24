@@ -44,7 +44,7 @@ public class Grid extends JFrame{
 
     }
     public void display(){
-        frame.setPreferredSize(new Dimension(size*30,size*30));
+        frame.setPreferredSize(new Dimension(size*40,size*40));
         frame.setLayout(new GridLayout(size, size));
 
         for(int i = 0; i < size; i++){

@@ -7,7 +7,5 @@ public class Main {
 
         grid.display();
 
-        grid.changeColor(5, 5);
-        grid.refresh();
     }
 }
