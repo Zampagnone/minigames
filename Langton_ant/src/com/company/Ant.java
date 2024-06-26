@@ -22,40 +22,40 @@ public class Ant {
             case 'n':
                 if(grid.getColor(x, y) == Color.WHITE){
                     facing = 'e';
-                    grid.setContent(x, y, 'v');
+                    grid.setContent(x, y, '>');
                 }else{
                     facing = 'w';
-                    grid.setContent(x, y, '^');
+                    grid.setContent(x, y, '<');
                 }
                 grid.changeColor(x, y);
                 break;
             case 's':
                 if(grid.getColor(x, y) == Color.WHITE){
                     facing = 'w';
-                    grid.setContent(x, y, '^');
+                    grid.setContent(x, y, '<');
                 }else{
                     facing = 'e';
-                    grid.setContent(x, y, 'v');
+                    grid.setContent(x, y, '>');
                 }
                 grid.changeColor(x, y);
                 break;
             case 'e':
                 if(grid.getColor(x, y) == Color.WHITE){
                     facing = 's';
-                    grid.setContent(x, y, '>');
+                    grid.setContent(x, y, 'v');
                 }else{
                     facing = 'n';
-                    grid.setContent(x, y, '<');
+                    grid.setContent(x, y, '^');
                 }
                 grid.changeColor(x, y);
                 break;
             case 'w':
                 if(grid.getColor(x, y) == Color.WHITE){
                     facing = 'n';
-                    grid.setContent(x, y, '<');
+                    grid.setContent(x, y, '^');
                 }else{
                     facing = 's';
-                    grid.setContent(x, y, '>');
+                    grid.setContent(x, y, 'v');
                 }
                 grid.changeColor(x, y);
 
@@ -74,7 +74,7 @@ public class Ant {
         grid.setContent(x, y, ' ');
         System.out.println(x + ", " + y);
         switch(facing){
-            case 'n':
+            case 'w':
 
 
                 if(y-1 < 0){
@@ -85,7 +85,7 @@ public class Ant {
                 grid.setContent(x, y, '<');
 
                 break;
-            case 's':
+            case 'e':
 
 
                 if(y+1 >= grid.getGridSize()){
@@ -96,7 +96,7 @@ public class Ant {
 
                 grid.setContent(x, y, '>');
                 break;
-            case 'e':
+            case 's':
 
 
                 if(x+1 >= grid.getGridSize()){
@@ -107,7 +107,7 @@ public class Ant {
                 grid.setContent(x, y, 'v');
 
                 break;
-            case 'w':
+            case 'n':
 
 
                 if(x-1 < 0){
