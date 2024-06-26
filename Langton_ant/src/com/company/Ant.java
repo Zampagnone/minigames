@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class Ant {
@@ -53,7 +52,7 @@ public class Ant {
         move();
         grid.refresh();
     }
-    public void move(){
+    private void move(){
         grid.changeColor(x, y);
         grid.setContent(x, y, ' ');
         switch(facing){
