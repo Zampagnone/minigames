@@ -55,18 +55,23 @@ public class Ant {
     }
     public void move(){
         grid.changeColor(x, y);
+        grid.setContent(x, y, ' ');
         switch(facing){
             case 'n':
                 x--;
+                grid.setContent(x, y, '^');
                 break;
             case 's':
                 x++;
+                grid.setContent(x, y, 'v');
                 break;
             case 'e':
                 y++;
+                grid.setContent(x, y, '>');
                 break;
             case 'w':
                 y--;
+                grid.setContent(x, y, '<');
                 break;
         }
     }
