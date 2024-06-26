@@ -2,9 +2,13 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Grid extends JFrame{
     private int size;
+    private int i, j;
+
     JFrame frame = new JFrame();
 
     private JButton [][] grid;
@@ -20,11 +24,22 @@ public class Grid extends JFrame{
 
         this.grid = new JButton[size][size];
 
-        for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
+        for(i = 0; i < size; i++){
+            for(j = 0; j < size; j++){
 
                 grid[i][j] = new JButton(" ");
                 grid[i][j].setBackground(Color.white);
+                grid[i][j].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(((JButton) e.getSource()).getBackground() == Color.BLACK){
+                            ((JButton) e.getSource()).setBackground(Color.WHITE);
+                        }else{
+                            ((JButton) e.getSource()).setBackground(Color.BLACK);
+                        }
+
+                    }
+                });
 
             }
         }
