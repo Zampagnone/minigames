@@ -52,7 +52,7 @@ public class Grid extends JFrame{
         grid[x][y].setText(content + "");
     }
     public void display(){
-        frame.setPreferredSize(new Dimension(size*40,size*40));
+        frame.setPreferredSize(new Dimension(size*44,size*44));
         frame.setLayout(new GridLayout(size, size));
 
         for(int i = 0; i < size; i++){
