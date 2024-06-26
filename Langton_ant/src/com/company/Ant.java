@@ -1,11 +1,15 @@
 package com.company;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Ant {
     private int x;
     private int y;
     private char facing;
+
+    private boolean spacePressed = false;
 
     private Grid grid;
 
@@ -125,5 +129,11 @@ public class Ant {
             e.printStackTrace();
         }
     }
+    /*
+    public boolean isSpacePressed(){
+        return grid.isSpacePressed();
+    }
+     */
+
 
 }

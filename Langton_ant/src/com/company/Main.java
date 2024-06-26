@@ -1,9 +1,19 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	    Ant ant = new Ant(4, 4, 'n', new Grid(20));
+	    Ant ant = new Ant(10, 10, 'n', new Grid(20));
+        Scanner sc = new Scanner(System.in);
+
+        String tmp = "";
+
+        do{
+            System.out.printf("\ntype start to make the ant start wandering: ");
+            tmp = sc.nextLine();
+        }while(!tmp.equals("start"));
 
         while(true){
             try {
@@ -14,4 +24,5 @@ public class Main {
             ant.turn();
         }
     }
+
 }
