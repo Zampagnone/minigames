@@ -34,8 +34,10 @@ public class Grid extends JFrame{
                     public void actionPerformed(ActionEvent e) {
                         if(((JButton) e.getSource()).getBackground() == Color.BLACK){
                             ((JButton) e.getSource()).setBackground(Color.WHITE);
+                            ((JButton) e.getSource()).setForeground(Color.BLACK);
                         }else{
                             ((JButton) e.getSource()).setBackground(Color.BLACK);
+                            ((JButton) e.getSource()).setForeground(Color.WHITE);
                         }
 
                     }
