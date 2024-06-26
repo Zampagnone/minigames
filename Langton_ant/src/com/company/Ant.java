@@ -1,8 +1,6 @@
 package com.company;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class Ant {
     private int x;
@@ -129,11 +127,11 @@ public class Ant {
             e.printStackTrace();
         }
     }
-    /*
+
     public boolean isSpacePressed(){
         return grid.isSpacePressed();
     }
-     */
+
 
 
 }

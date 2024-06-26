@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Grid extends JFrame{
+public class Grid extends JFrame implements KeyListener{
     private int size;
     private int i, j;
 
@@ -85,37 +85,35 @@ public class Grid extends JFrame{
                 frame.add(grid[i][j]);
             }
         }
-        /*
-        Keyhandler handler = new Keyhandler();
-        frame.addKeyListener(handler);
-        */
+
+        frame.setFocusable(true);
+        frame.addKeyListener(this);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Langton's ant");
         frame.pack();
         frame.setVisible(true);
     }
-    /*
-    public class Keyhandler implements KeyListener {
 
-        @Override
-        public void keyTyped(KeyEvent e) {
-
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+            setSpacePressed(true);
         }
+    }
 
-        @Override
-        public void keyPressed(KeyEvent e) {
-            if(e.getKeyCode() == KeyEvent.VK_SPACE){
-                System.out.println("cacca");
-                setSpacePressed(true);
-            }
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+            setSpacePressed(true);
         }
+    }
 
-        @Override
-        public void keyReleased(KeyEvent e) {
-
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_SPACE){
+            setSpacePressed(true);
         }
-
     }
     public void setSpacePressed(boolean spacePressed){
         this.spacePressed = spacePressed;
@@ -123,5 +121,5 @@ public class Grid extends JFrame{
     public boolean isSpacePressed(){
         return spacePressed;
     }
-    */
+
 }
