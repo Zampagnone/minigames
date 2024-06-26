@@ -24,6 +24,7 @@ public class Grid extends JFrame{
             for(int j = 0; j < size; j++){
 
                 grid[i][j] = new JButton(" ");
+                grid[i][j].setBackground(Color.white);
 
             }
         }
@@ -44,6 +45,9 @@ public class Grid extends JFrame{
             grid[x][y].setOpaque(true);
         }
 
+    }
+    public int getGridSize(){
+        return size;
     }
     public Color getColor(int x, int y){
         return grid[x][y].getBackground();
