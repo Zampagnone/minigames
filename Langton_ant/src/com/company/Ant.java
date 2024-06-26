@@ -20,7 +20,7 @@ public class Ant {
     public void turn(){
         switch(facing){
             case 'n':
-                if(grid.getColor(x, y) == Color.BLACK){
+                if(grid.getColor(x, y) == Color.WHITE){
                     facing = 'e';
                     grid.setContent(x, y, 'v');
                 }else{
@@ -30,7 +30,7 @@ public class Ant {
                 grid.changeColor(x, y);
                 break;
             case 's':
-                if(grid.getColor(x, y) == Color.BLACK){
+                if(grid.getColor(x, y) == Color.WHITE){
                     facing = 'w';
                     grid.setContent(x, y, '^');
                 }else{
@@ -40,7 +40,7 @@ public class Ant {
                 grid.changeColor(x, y);
                 break;
             case 'e':
-                if(grid.getColor(x, y) == Color.BLACK){
+                if(grid.getColor(x, y) == Color.WHITE){
                     facing = 's';
                     grid.setContent(x, y, '>');
                 }else{
@@ -50,7 +50,7 @@ public class Ant {
                 grid.changeColor(x, y);
                 break;
             case 'w':
-                if(grid.getColor(x, y) == Color.BLACK){
+                if(grid.getColor(x, y) == Color.WHITE){
                     facing = 'n';
                     grid.setContent(x, y, '<');
                 }else{
@@ -82,7 +82,7 @@ public class Ant {
                 }else{
                     y--;
                 }
-                grid.setContent(x, y, '^');
+                grid.setContent(x, y, '<');
 
                 break;
             case 's':
@@ -94,7 +94,7 @@ public class Ant {
                     y++;
                 }
 
-                grid.setContent(x, y, 'v');
+                grid.setContent(x, y, '>');
                 break;
             case 'e':
 
@@ -104,7 +104,7 @@ public class Ant {
                 }else{
                     x++;
                 }
-                grid.setContent(x, y, '<');
+                grid.setContent(x, y, 'v');
 
                 break;
             case 'w':
@@ -115,9 +115,14 @@ public class Ant {
                 }else{
                     x--;
                 }
-                grid.setContent(x, y, '>');
+                grid.setContent(x, y, '^');
 
                 break;
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
