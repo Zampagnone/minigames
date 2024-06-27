@@ -77,7 +77,6 @@ public class Ant {
             e.printStackTrace();
         }
         grid.setContent(x, y, ' ');
-        System.out.println(x + ", " + y);
         switch(facing){
             case 'w':
 

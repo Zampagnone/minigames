@@ -1,15 +1,11 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
 	    Ant ant = new Ant(10, 10, 'n', new Grid(20));
 
-        while(!ant.isSpacePressed()){
-            System.out.println(ant.isSpacePressed());
-        }
+        while(!ant.isSpacePressed()){}
 
         ant.setTitle("Langton's ant");
 
