@@ -11,6 +11,8 @@ public class Main {
             System.out.println(ant.isSpacePressed());
         }
 
+        ant.setTitle("Langton's ant");
+
         while(true){
             try {
                 Thread.sleep(200);

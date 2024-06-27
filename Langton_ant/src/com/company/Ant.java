@@ -67,6 +67,9 @@ public class Ant {
         move();
         grid.refresh();
     }
+    public void setTitle(String title){
+        grid.setTitle(title);
+    }
     private void move(){
         try {
             Thread.sleep(200);

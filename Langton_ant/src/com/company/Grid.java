@@ -76,6 +76,9 @@ public class Grid extends JFrame implements KeyListener{
     public void setContent(int x, int y, char content){
         grid[x][y].setText(content + "");
     }
+    public void setTitle(String title){
+        frame.setTitle(title);
+    }
     public void display(){
         frame.setPreferredSize(new Dimension(size*44,size*44));
         frame.setLayout(new GridLayout(size, size));
@@ -90,7 +93,7 @@ public class Grid extends JFrame implements KeyListener{
         frame.addKeyListener(this);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Langton's ant");
+        frame.setTitle("Press space to start");
         frame.pack();
         frame.setVisible(true);
     }
